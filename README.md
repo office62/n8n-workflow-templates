@@ -1,32 +1,46 @@
 # n8n Workflow Templates Collection
 
-Colecție de peste 4000+ template-uri pentru automatizări n8n.
+Colecție de **740 workflow-uri n8n** organizate pe **24 de categorii**, cu descrieri auto-generate pentru fiecare.
 
-## 📋 Despre Proiect
+## Despre Proiect
 
-Acest repository conține o colecție vastă de workflow-uri n8n organizate pe categorii:
-- Analytics
-- API & Webhooks
-- Automation
-- Communication
-- Database & Storage
-- Document Processing
-- AI & LLMs
-- Social Media
-- și multe altele...
+Acest repository conține workflow-uri n8n gata de utilizat, acoperind o gamă largă de integrări și cazuri de utilizare:
 
-### 📚 Catalog Complet
+| Categorie | Workflow-uri | Descriere |
+|-----------|:-----------:|-----------|
+| AI Research, RAG & Data Analysis | 41 | Crawlere AI, RAG cu Qdrant/Pinecone, analiză date |
+| OpenAI & LLMs | 82 | Chatboți, asistenți AI, generare conținut, clasificare |
+| Automation | 252 | Automatizări generale, cron jobs, integrări multiple |
+| Data Integration | 75 | Sincronizare date între servicii, ETL |
+| Communication | 41 | Email, Slack, notificări, mesagerie |
+| Document Processing | 30 | Procesare PDF, OCR, conversii documente |
+| Data Transformation | 24 | Transformare, filtrare, agregare date |
+| Gmail & Email | 21 | Automatizări email, filtre, sumarizare cu AI |
+| API & Webhooks | 20 | Integrări API, webhook handlers |
+| Telegram | 20 | Boți Telegram, notificări, comenzi |
+| Google Drive & Sheets | 17 | Automatizări Google Workspace |
+| PDF & Documents | 18 | Procesare PDF cu AI, extracție date |
+| Slack | 11 | Integrări și automatizări Slack |
+| Instagram, Twitter & Social Media | 10 | Publicare, monitorizare social media |
+| Notion | 10 | Automatizări Notion, sincronizare |
+| WordPress | 6 | Publicare, management conținut |
+| Analytics | 6 | Tracking, rapoarte, dashboards |
+| Alte categorii | 56 | Airtable, Discord, WhatsApp, HR, Forms, etc. |
 
-**[Vezi WORKFLOW_CATALOG.md](WORKFLOW_CATALOG.md)** - Catalog detaliat cu toate workflow-urile
+### Catalog Complet
 
-**[Descarcă WORKFLOW_CATALOG.csv](WORKFLOW_CATALOG.csv)** - Format CSV pentru Excel/Google Sheets
+**[WORKFLOW_CATALOG.md](WORKFLOW_CATALOG.md)** - Catalog detaliat cu descrierea fiecărui workflow
 
-**Statistici:**
-- **448 workflow-uri** documentate
-- **7 categorii** principale
-- Detalii pentru fiecare: noduri, conexiuni, trigger-uri, integrări
+**[WORKFLOW_CATALOG.csv](WORKFLOW_CATALOG.csv)** - Format CSV pentru Excel/Google Sheets
 
-## ✅ Validare Automată
+Fiecare workflow include:
+- **Descriere automată** a ce face (trigger, acțiuni, integrări)
+- Număr de noduri și conexiuni
+- Tip de declanșare (webhook, programat, manual)
+- Lista de integrări utilizate
+- Tag-uri și metadate
+
+## Validare Automată
 
 Acest repository folosește GitHub Actions pentru a valida automat toate workflow-urile n8n.
 
@@ -44,9 +58,9 @@ Poți rula workflow-ul manual din tab-ul "Actions" pe GitHub:
 2. Selectează "Validate n8n Workflows"
 3. Click pe **Run workflow**
 
-## 🛠️ Tool-uri de Validare (Local)
+## Tool-uri (Local)
 
-Poți rula validarea și local pe calculator.
+Poți rula validarea și generarea de catalog local pe calculator.
 
 ### Instalare
 
@@ -80,33 +94,44 @@ n8n-visualize path/to/workflow.json -o output.png --no-show
 
 **Generare catalog:**
 ```bash
-# Generează catalog complet (Markdown + CSV)
+# Generează catalog complet (Markdown + CSV) cu descrieri
 n8n-catalog . -o WORKFLOW_CATALOG.md --csv WORKFLOW_CATALOG.csv
 
 # Doar Markdown
 n8n-catalog .
 ```
 
-## 📁 Structura Repository-ului
+Catalogul scanează atât fișiere `workflow.json` cât și `.txt` care conțin definiții de workflow-uri n8n.
+
+## Structura Repository-ului
 
 ```
 .
 ├── .github/
 │   └── workflows/
-│       └── validate-workflows.yml  # GitHub Actions workflow
+│       └── validate-workflows.yml    # GitHub Actions CI
 ├── lib/
-│   ├── n8n_tools/                  # Tool-uri Python de validare
-│   │   ├── validator.py            # Validator de workflow-uri
-│   │   └── visualizer.py           # Generator de vizualizări
+│   ├── n8n_tools/
+│   │   ├── validator.py              # Validator workflow-uri
+│   │   ├── visualizer.py             # Generator vizualizări PNG
+│   │   └── catalog.py                # Generator catalog cu descrieri
 │   ├── requirements.txt
 │   └── setup.py
-├── analytics/                      # Workflow-uri pentru analytics
-├── automation/                     # Workflow-uri de automatizare
-├── api-webhooks/                   # Workflow-uri API & Webhooks
-└── ...                             # Alte categorii
+├── AI_Research_RAG_and_Data_Analysis/ # RAG, crawlere AI, analiză
+├── OpenAI_and_LLMs/                  # Chatboți, asistenți, LLM-uri
+├── automation/                       # Automatizări generale
+├── data-integration/                 # Sincronizare date, ETL
+├── communication/                    # Email, Slack, notificări
+├── Telegram/                         # Boți și automatizări Telegram
+├── Gmail_and_Email_Automation/       # Automatizări email
+├── Google_Drive_and_Google_Sheets/   # Google Workspace
+├── ...                               # + 16 alte categorii
+├── WORKFLOW_CATALOG.md               # Catalog complet Markdown
+├── WORKFLOW_CATALOG.csv              # Catalog CSV
+└── INSTRUCTIUNI_GITHUB.md            # Instrucțiuni setup GitHub
 ```
 
-## 🚀 Cum să Contribui
+## Cum să Contribui
 
 1. Fork repository-ul
 2. Creează un branch nou: `git checkout -b feature/nume-workflow`
@@ -117,15 +142,16 @@ n8n-catalog .
 
 Pull Request-ul tău va fi validat automat de GitHub Actions!
 
-## 📊 Statistici
+## Statistici
 
-- **Total workflow-uri**: 448 (din colecția de 4000+)
-- **Categorii**: 7 (analytics, automation, api-webhooks, communication, data-integration, data-transformation, document-processing)
-- **Toate validate automat**: ✅
-- **Catalog complet**: ✅ Markdown + CSV
-- **Vizualizări auto-generate**: ✅ PNG pentru fiecare workflow
+- **Total workflow-uri**: 740
+- **Categorii**: 24
+- **Formate**: workflow.json (448) + .txt (292)
+- **Toate cu descrieri auto-generate**
+- **Validare automată**: GitHub Actions
+- **Catalog**: Markdown + CSV cu descrieri
 
-## 📝 Licență
+## Licență
 
 Verifică licența fiecărui workflow individual.
 
