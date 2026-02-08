@@ -15,6 +15,17 @@ Acest repository conține o colecție vastă de workflow-uri n8n organizate pe c
 - Social Media
 - și multe altele...
 
+### 📚 Catalog Complet
+
+**[Vezi WORKFLOW_CATALOG.md](WORKFLOW_CATALOG.md)** - Catalog detaliat cu toate workflow-urile
+
+**[Descarcă WORKFLOW_CATALOG.csv](WORKFLOW_CATALOG.csv)** - Format CSV pentru Excel/Google Sheets
+
+**Statistici:**
+- **448 workflow-uri** documentate
+- **7 categorii** principale
+- Detalii pentru fiecare: noduri, conexiuni, trigger-uri, integrări
+
 ## ✅ Validare Automată
 
 Acest repository folosește GitHub Actions pentru a valida automat toate workflow-urile n8n.
@@ -67,6 +78,15 @@ n8n-visualize path/to/workflow.json -o output.png
 n8n-visualize path/to/workflow.json -o output.png --no-show
 ```
 
+**Generare catalog:**
+```bash
+# Generează catalog complet (Markdown + CSV)
+n8n-catalog . -o WORKFLOW_CATALOG.md --csv WORKFLOW_CATALOG.csv
+
+# Doar Markdown
+n8n-catalog .
+```
+
 ## 📁 Structura Repository-ului
 
 ```
@@ -99,9 +119,11 @@ Pull Request-ul tău va fi validat automat de GitHub Actions!
 
 ## 📊 Statistici
 
-- **Total workflow-uri**: 4000+
-- **Categorii**: 20+
+- **Total workflow-uri**: 448 (din colecția de 4000+)
+- **Categorii**: 7 (analytics, automation, api-webhooks, communication, data-integration, data-transformation, document-processing)
 - **Toate validate automat**: ✅
+- **Catalog complet**: ✅ Markdown + CSV
+- **Vizualizări auto-generate**: ✅ PNG pentru fiecare workflow
 
 ## 📝 Licență
 
