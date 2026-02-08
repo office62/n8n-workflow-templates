@@ -16,6 +16,7 @@ setup(
         "console_scripts": [
             "n8n-validate=n8n_tools.validator:cli",
             "n8n-visualize=n8n_tools.visualizer:cli",
+            "n8n-catalog=n8n_tools.catalog:cli",
         ],
     },
     python_requires=">=3.8",
